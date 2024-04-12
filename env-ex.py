@@ -4,7 +4,7 @@ from prefect import flow
 
 @flow(log_prints=True)
 def some_work():
-    not_so_secret_value = os.environ.get("wow")
+    not_so_secret_value = "x"  # os.environ.get("wow")
     print(not_so_secret_value)
 
 
