@@ -8,13 +8,15 @@ def some_work():
     print(not_so_secret_value)
 
 
-some_work.from_source(
-    source="https://github.com/discdiver/creds-examples.git",
-    entrypoint="env-ex.py:some_work",
-).deploy(
-    name="my-dep",
-    work_pool_name="dock1",
-)
+if __name__ == "__main__":
+
+    some_work.from_source(
+        source="https://github.com/discdiver/creds-examples.git",
+        entrypoint="env-ex.py:some_work",
+    ).deploy(
+        name="my-dep",
+        work_pool_name="dock1",
+    )
 
 
 # if i don't have "yo" as an environmment variable on the work pool, does this fail?
