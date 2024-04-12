@@ -14,7 +14,6 @@ some_work.from_source(
 ).deploy(
     name="my-dep",
     work_pool_name="p2",
-    job_variables={"wow": {os.environ.get("yo")}},
 )
 
 
