@@ -5,12 +5,13 @@ from prefect import flow
 @flow(log_prints=True)
 def some_work():
     not_so_secret_value = "x"  # os.environ.get("wow")
-    print(not_so_secret_value)
+    print(not_so_secret_value)g
+    return
 
 
 if __name__ == "__main__":
 
-    some_work.from_source(
+    flow.from_source(
         source="https://github.com/discdiver/creds-examples.git",
         entrypoint="env-ex.py:some_work",
     ).deploy(
