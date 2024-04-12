@@ -13,6 +13,6 @@ some_work.from_source(
     entrypoint="env-ex.py:some_work",
 ).deploy(
     name="my-dep",
-    work_pool_name="p1",
+    work_pool_name="p2",
     job_variables={"VAR1": {os.environ.get("yo")}},
 )
