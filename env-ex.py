@@ -4,7 +4,7 @@ from prefect import flow
 
 @flow(log_prints=True)
 def some_work():
-    not_so_secret_value = os.environ.get("yo")
+    not_so_secret_value = os.environ.get("wow")
     print(not_so_secret_value)
 
 
@@ -14,5 +14,8 @@ some_work.from_source(
 ).deploy(
     name="my-dep",
     work_pool_name="p2",
-    job_variables={"VAR1": {os.environ.get("yo")}},
+    job_variables={"wow": {os.environ.get("yo")}},
 )
+
+
+# if i don't have "yo" as an environmment variable on the work pool, does this fail?
