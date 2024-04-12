@@ -6,7 +6,6 @@ from prefect import flow
 def some_work():
     not_so_secret_value = "x"  # os.environ.get("wow")
     print(not_so_secret_value)g
-    return
 
 
 if __name__ == "__main__":
